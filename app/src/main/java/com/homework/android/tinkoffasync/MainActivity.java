@@ -14,6 +14,13 @@ public class MainActivity extends AppCompatActivity implements ThreadDownloadMan
     private static boolean isIsNotFirstShow;
 
     @Override
+    protected void onUserLeaveHint() {
+        super.onUserLeaveHint();
+        ThreadDownloadManager.isStopped = true;
+        ThreadShowManager.isStopped = true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -63,12 +70,5 @@ public class MainActivity extends AppCompatActivity implements ThreadDownloadMan
                 textView.setText(value);
             }
         });
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        ThreadDownloadManager.isStopped = true;
-        ThreadShowManager.isStopped = true;
     }
 }
