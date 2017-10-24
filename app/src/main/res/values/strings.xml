@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TinkoffAsync</string>
+    <string name="download_array">Download</string>
+    <string name="show_array">Show array</string>
+</resources>
